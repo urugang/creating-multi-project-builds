@@ -3,6 +3,14 @@ apply plugin : 'application'
 
 mainClassName = 'greeter.Greeter'
 
+
+task runApp(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'greeter.Greeter'
+  standardInput = System.in
+  args 'New World'
+}
+
 dependencies {
     compile project(':greeting-library') 
 }
