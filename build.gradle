@@ -1,16 +1,45 @@
 
 plugins {
-  id 'org.asciidoctor.convert' version '1.5.3' apply false 
+    id 'org.asciidoctor.convert' version '1.5.3' apply false
 }
 
 
 allprojects {
     repositories {
-        jcenter() 
+        maven {
+            url 'https://maven.aliyun.com/repository/apache-snapshots'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/central'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        jcenter {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring-plugin'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/releases'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/snapshots'
+        }
     }
 }
 
-configure(subprojects.findAll {it.name == 'greeter' || it.name == 'greeting-library'} ) { 
+configure(subprojects.findAll {it.name == 'greeter' || it.name == 'greeting-library'} ) {
 
     apply plugin : 'groovy'
 
